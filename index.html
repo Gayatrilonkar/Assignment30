@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            text-align: center;
+        }
+        .img{
+            height: 130px;
+            display: block;
+            margin: 10px auto;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+        }
+        .btn{
+            margin: 10px 30px;
+            width: 100px;
+            cursor: pointer;
+        }
+        .image{
+            height: 30px;
+            cursor: pointer;
+        }
+        .img-container{
+            position: fixed;
+            right: 5px;
+        }
+        .btn-dark{
+            color: white;
+            background-color: rgb(108, 28, 182);
+        }
+        .btn-light{
+            color: black;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body class="bg-light" id="main-body">
+ <h1 class="title">Butterfly togger!!</h1> 
+ <div class="img-container">
+    <img src="star.png" class="image" onclick="enableLight()">
+    <img src="star (1).png" class="image" onclick="enableDark()">
+ </div>
+ <img src="butterfly.png" class="img" id="img-butterfly" > 
+ <div class="btn-container">
+    <button type="button" class="btn" onclick="butterflyon()">On</button>
+    <button type="button" class="btn" onclick="butterflyoff()">Off</button>
+ </div>
+ <script>
+    function butterflyon(){
+        const butterflyElement=document.getElementById("img-butterfly")
+        butterflyElement.src="fly.png"
+
+    }
+    function butterflyoff(){
+        const butterflyElement=document.getElementById("img-butterfly")
+        butterflyElement.src="butterfly.png"
+
+
+    }
+    function enableDark(){
+        const mainBody = document.getElementById("main-body")
+        mainBody.classList.add("bg-dark")
+        mainBody.classList.remove("bg-light")
+
+        const toggleButton = document.getElementById("btn-toggle")
+        toggleButton.classList.remove("btn-light")
+        toggleButton.classList.add("btn-dark")
+    }
+
+    function enableLight(){
+        const mainBody = document.getElementById("main-body")
+        mainBody.classList.add("bg-light")
+        mainBody.classList.remove("bg-dark")
+
+        const toggleButton = document.getElementById("btn-toggle")
+
+
+        toggleButton.classList.add("btn-light")
+        toggleButton.classList.remove("btn-dark")
+    }
+
+ </script>
+</body>
+</html>
